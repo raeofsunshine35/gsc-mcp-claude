@@ -1,0 +1,79 @@
+// ================================================================
+// GSC MCP — Claude Desktop Config Template
+// By Rae of Sunshine Consulting · raeofsunshineconsulting.co
+//
+// CHOOSE THE VERSION THAT MATCHES YOUR SITUATION:
+//
+//   OPTION A — You have NO other MCP servers configured yet
+//              Use this if your config file is empty or only has {}
+//
+//   OPTION B — You ALREADY have other MCP servers (e.g. Zoho)
+//              Add the gscServer block inside your existing mcpServers
+//
+// Replace ALL placeholder paths with your actual file paths.
+// Windows paths use double backslashes: C:\\Users\\YourName\\...
+// Mac paths use forward slashes:        /Users/YourName/...
+//
+// To find your uvx path:
+//   Windows → open Command Prompt and type:  where uvx
+//   Mac     → open Terminal and type:        which uvx
+// ================================================================
+
+
+// ----------------------------------------------------------------
+// OPTION A — No other MCP servers (clean install)
+// ----------------------------------------------------------------
+// Use this if your claude_desktop_config.json is empty or has {}.
+// Replace the entire file contents with the block below.
+
+{
+  "mcpServers": {
+    "gscServer": {
+      "command": "/FULL/PATH/TO/uvx",
+      "args": ["mcp-search-console"],
+      "env": {
+        "GSC_OAUTH_CLIENT_SECRETS_FILE": "/FULL/PATH/TO/client_secrets.json"
+      }
+    }
+  }
+}
+
+
+// ----------------------------------------------------------------
+// OPTION B — You already have other MCP servers (e.g. Zoho)
+// ----------------------------------------------------------------
+// DO NOT replace your whole config file.
+// Add only the gscServer block inside your existing mcpServers.
+// Example showing Zoho alongside GSC:
+
+{
+  "mcpServers": {
+
+    "zoho-crm": {
+      "command": "/FULL/PATH/TO/uvx",
+      "args": ["zoho-crm-mcp"],
+      "env": {
+        "ZOHO_CLIENT_ID": "your-zoho-client-id",
+        "ZOHO_CLIENT_SECRET": "your-zoho-client-secret"
+      }
+    },
+
+    "gscServer": {
+      "command": "/FULL/PATH/TO/uvx",
+      "args": ["mcp-search-console"],
+      "env": {
+        "GSC_OAUTH_CLIENT_SECRETS_FILE": "/FULL/PATH/TO/client_secrets.json"
+      }
+    }
+
+  }
+}
+
+// ----------------------------------------------------------------
+// IMPORTANT NOTES
+// ----------------------------------------------------------------
+// 1. Each server block must be separated by a comma EXCEPT the last one
+// 2. Do not commit client_secrets.json to GitHub — keep it private
+// 3. After saving this file, fully quit and restart Claude Desktop
+// 4. The first restart triggers the Google OAuth login in your browser
+// ----------------------------------------------------------------
