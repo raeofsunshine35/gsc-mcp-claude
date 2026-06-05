@@ -1,4 +1,5 @@
-# GSC MCP Tools — Full Reference
+# references/gsc-tools.md 
+GSC MCP Tools — Full Reference
 
 All 20 tools available in the `mcp-search-console` server. Claude selects the
 right one automatically — you ask in plain English, it runs the tool.
