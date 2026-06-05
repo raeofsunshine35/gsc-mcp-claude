@@ -1,3 +1,4 @@
+references/client-workflows.md
 # Client Workflow Examples
 
 Real workflows used in active consulting engagements. All site URLs and client
